@@ -1,1 +1,1 @@
-This is a repository for practicing conceptual understanding of machine learning algorithms.
+This is a repository for practicing conceptual understanding and practical application of machine learning algorithms.
