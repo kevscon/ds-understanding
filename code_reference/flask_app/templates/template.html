@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <!-- charcater encoding -->
+  <meta charset="utf-8">
+  <!-- view settings for different devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- link for webpage icon -->
+  <link rel="icon" type="image/png" href="static/img/yinyang.png">
+  <!-- link for css stylesheet -->
+  <link rel="stylesheet" href="static/css/styles.css" type="text/css">
+  <!-- webpage title -->
+  <title>Flask Reference</title>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">Navigation</h1>
+      <!-- navigation -->
+      <strong><nav>
+        <!-- list of site webpages -->
+        <ul class="menu">
+          <!-- link to home page -->
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <!-- link to about page -->
+          <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+      </nav></strong>
+    </div>
+  </header>
+  <!-- input script for extended webpages -->
+  {% block content %}
+  {% endblock %}
+</body>
+
+</html>

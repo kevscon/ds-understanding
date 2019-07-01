@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <!-- charcater encoding -->
+  <meta charset="utf-8">
+  <!-- view settings for different devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- link for webpage icon -->
+  <link rel="icon" type="image/png" href="static/img/yinyang.png">
+  <!-- link for css stylesheet -->
+  <link rel="stylesheet" href="static/css/styles.css" type="text/css">
+  <!-- webpage title -->
+  <title>Flask Reference</title>
+</head>
+
+<body>
+  <!-- script to extend -->
+  {% extends 'template.html' %}
+  <!-- content for this webpage -->
+  {% block content %}
+
+  <!-- create form element to pass input to flask -->
+  <form method="POST">
+    Text Input<br>
+    <input type="text" name="txt_inp"><br>
+    Numerical Input<br>
+    <input type="number" step="0.1" min=0 max=100 name="num_inp"><br>
+    Categorical Input<br>
+      <select name="cat_inp">
+        <!-- select default value from list -->
+        <option value="{{ select_items[2] }}">{{ select_items[2] }}</option>
+        <!-- iterate through passed list items -->
+        {% for item in select_items %}
+          <option value="{{ item }}">{{ item }}</option>
+        {% endfor %}
+      </select>
+      <!-- submit button -->
+      <p>
+        <input type="submit" value="Submit">
+      </p>
+  </form>
+
+
+  {% endblock %}
+</body>
