@@ -1,0 +1,139 @@
+/* Webpage Styles */
+/* this script formats the application content */
+
+/* all body text */
+body {
+  font-family: Helvetica;
+  font-size: 16px;
+}
+
+/* navigation tab */
+/* this block formats any list item */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* box color */
+  background-color: #333;
+}
+
+/* set list item to left of webpage */
+li {
+  float: left;
+}
+
+/* set list link item display settings */
+li a {
+  display: block;
+  /* text font type with backup*/
+  font-family: "Comic Sans MS", Arial;
+  /* text color */
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+/* navigation tab */
+
+/* error message */
+.error {
+  color: red;
+}
+
+/* input boxes */
+input {
+  width: 100px;
+  font-family: Helvetica;
+  font-size: 16px;
+  background-color: #333;
+  color: #ffffff;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+}
+
+/* submit button */
+input[type="submit"] {
+  /* change cursor to pointer at button */
+  cursor: pointer;
+}
+
+/* select box (html) */
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Helvetica;
+  width: 200px;
+  display: inline-block;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+/* select box (html) */
+
+/* select box (js) */
+/* set default select disply */
+.select-selected {
+  background-color: #333;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #333;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/* select box (js) */
+
+/* commenting in your scripts is a great way to see how you've already thought */
+/* your way through a puzzle like this. having a general idea of what's going on  */
+/* will help form the routine that gets more automatic each/most time(s) */
+/* ~~Bob Roth~ */

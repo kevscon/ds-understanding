@@ -1,3 +1,5 @@
+<!-- Navigation Bar -->
+<!-- template script for application naviagtion, inserted on all webpages -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -6,24 +8,23 @@
   <meta charset="utf-8">
   <!-- view settings for different devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- link for webpage icon -->
-  <link rel="icon" type="image/png" href="static/img/yinyang.png">
   <!-- link for css stylesheet -->
   <link rel="stylesheet" href="static/css/styles.css" type="text/css">
-  <!-- webpage title -->
-  <title>Flask Reference</title>
+  <!-- this references the css stylesheet which will format this page -->
+  <link rel="stylesheet" href="static/css/styles.css">
 </head>
 
 <body>
   <header>
-    <div class="container">
-      <h1 class="logo">Navigation</h1>
+    <!-- background="static/img/bamboo.jpg" -->
+    <div>
+      <h1 style="font-family: Comic Sans MS;">Flask Application</h1>
       <!-- navigation -->
       <strong><nav>
         <!-- list of site webpages -->
-        <ul class="menu">
+        <ul>
           <!-- link to home page -->
-          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('input') }}">Home</a></li>
           <!-- link to about page -->
           <li><a href="{{ url_for('about') }}">About</a></li>
         </ul>

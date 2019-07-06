@@ -1,3 +1,5 @@
+<!-- Input Page -->
+<!-- script to collect application input -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -9,9 +11,9 @@
   <!-- link for webpage icon -->
   <link rel="icon" type="image/png" href="static/img/yinyang.png">
   <!-- link for css stylesheet -->
-  <link rel="stylesheet" href="static/css/styles.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="static/css/styles.css">
   <!-- webpage title -->
-  <title>Flask Reference</title>
+  <title>App Input</title>
 </head>
 
 <body>
@@ -20,27 +22,48 @@
   <!-- content for this webpage -->
   {% block content %}
 
+  <div class="error">
+    <p>
+      <!-- flash message for missing input -->
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </p>
+  </div>
   <!-- create form element to pass input to flask -->
   <form method="POST">
-    Text Input<br>
-    <input type="text" name="txt_inp"><br>
-    Numerical Input<br>
-    <input type="number" step="0.1" min=0 max=100 name="num_inp"><br>
-    Categorical Input<br>
-      <select name="cat_inp">
-        <!-- select default value from list -->
-        <option value="{{ select_items[2] }}">{{ select_items[2] }}</option>
-        <!-- iterate through passed list items -->
-        {% for item in select_items %}
-          <option value="{{ item }}">{{ item }}</option>
-        {% endfor %}
-      </select>
-      <!-- submit button -->
+    Input Word
+    <!-- text input box -->
+    <p><input type="text" name="txt_inp"></p>
+    Input Digit (1-10)
+    <!-- numerical input box -->
+    <p><input type="number" step="1" min=0 max=10 name="num_inp"></p>
+    Input Task for App<br>
       <p>
+        <div class="custom-select">
+          <!-- dropdown input box -->
+          <select name="cat_inp">
+            <!-- default select box text display -->
+            <!-- selected disabled hidden -->
+            <option value="">Select Item</option>
+            <!-- iterate through list passed from app as variable -->
+            {% for item in select_items %}
+              <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </p>
+      <p>
+        <!-- submit button -->
         <input type="submit" value="Submit">
       </p>
   </form>
 
-
+  <!-- link to javascript file -->
+  <script type="text/javascript" src="static/js/script.js"></script>
   {% endblock %}
 </body>

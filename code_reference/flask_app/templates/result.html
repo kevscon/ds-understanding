@@ -1,3 +1,5 @@
+<!-- Output Page  -->
+<!-- script to display application output -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -11,7 +13,7 @@
   <!-- link for css stylesheet -->
   <link rel="stylesheet" href="static/css/styles.css" type="text/css">
   <!-- webpage title -->
-  <title>Flask Reference</title>
+  <title>App Output</title>
 </head>
 
 <body>
@@ -20,13 +22,23 @@
   <!-- content for this webpage -->
   {% block content %}
 
-  <h1>Result</h1>
-  Text Input<br>
+  <h1>Here are the results!</h1>
   {{ txt_inp }}<br>
-  Numerical Input<br>
   {{ num_inp }}<br>
-  Categorical Input<br>
-  {{ cat_inp }}
+  {{ cat_inp }}<br>
+  <!-- conditional output with string cast to integer -->
+  {% if num_inp|int > 3 %}
+    <!-- variable from app -->
+    {{ result }}<br>
+    Wow! It's more than three!
+  {% else %}
+    <!-- variable from app -->
+    {{ result }}
+  {% endif %}
+  <p>
+    <!-- refresh to input webpage -->
+    <a href = {{ url_for('input') }}>Restart</a>
+  </p>
 
   {% endblock %}
 </body>
