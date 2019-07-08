@@ -133,6 +133,22 @@ input[type="submit"] {
 }
 /* select box (js) */
 
+/* format restart app link */
+.restart:link, .restart:visited {
+  background-color: #333;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  /* remove underline */
+  text-decoration: none;
+  display: inline-block;
+}
+
+.restart:hover, .restart:active {
+  background-color: #111;
+}
+/* format restart app link */
+
 /* commenting in your scripts is a great way to see how you've already thought */
 /* your way through a puzzle like this. having a general idea of what's going on  */
 /* will help form the routine that gets more automatic each/most time(s) */
