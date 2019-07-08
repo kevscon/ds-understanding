@@ -5,6 +5,10 @@
 body {
   font-family: Helvetica;
   font-size: 16px;
+  /* gradient background color settings */
+  background: linear-gradient(90deg, rgba(95,94,99,1) 0%, rgba(203,203,217,1) 50%, rgba(95,94,99,1) 100%);
+  /* center content */
+  text-align: center;
 }
 
 /* navigation tab */
@@ -43,7 +47,7 @@ li a:hover {
 
 /* error message */
 .error {
-  color: red;
+  color: #B22222;
 }
 
 /* input boxes */
@@ -148,6 +152,35 @@ input[type="submit"] {
   background-color: #111;
 }
 /* format restart app link */
+
+/* application output */
+.output1 {
+  /* font-family: Impact; */
+  font-size: 20px;
+  /* display as table */
+  display: table;
+  /* match output width */
+  width: auto;
+  /* center table */
+  margin-left:auto;
+  margin-right:auto;
+  padding: 10px;
+  border-left: 6px solid green;
+  background-color: lightgreen;
+}
+
+.output2 {
+  /* font-family: Impact; */
+  font-size: 20px;
+  display: table;
+  width: auto;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 10px;
+  border-left: 6px solid red;
+  background-color: lightsalmon;
+}
+/* application output */
 
 /* commenting in your scripts is a great way to see how you've already thought */
 /* your way through a puzzle like this. having a general idea of what's going on  */

@@ -22,18 +22,18 @@
   <!-- content for this webpage -->
   {% block content %}
 
-  <h1>Here are the results!</h1>
-  {{ txt_inp }}<br>
-  {{ num_inp }}<br>
-  {{ cat_inp }}<br>
+  <h2>Here are the results!</h2>
   <!-- conditional output with string cast to integer -->
   {% if num_inp|int > 3 %}
-    <!-- variable from app -->
-    {{ result }}<br>
-    Wow! It's more than three!
+    <div class="output1">
+      <!-- variable from app -->
+      <h1>{{ result }}</h1>
+    </div>
   {% else %}
-    <!-- variable from app -->
-    {{ result }}
+    <div class="output2">
+      <!-- variable from app -->
+      <h1>{{ result }}</h1>
+    </div>
   {% endif %}
   <p>
     <!-- refresh to input webpage -->
