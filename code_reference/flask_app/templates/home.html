@@ -22,45 +22,60 @@
   <!-- content for this webpage -->
   {% block content %}
 
-  <div class="error">
-    <p>
-      <!-- flash message for missing input -->
-      {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                {{ message }}
-            {% endfor %}
-        {% endif %}
-      {% endwith %}
-    </p>
-  </div>
   <!-- create form element to pass input to flask -->
   <form method="POST">
-    Input Word
-    <!-- text input box -->
-    <p><input type="text" name="txt_inp"></p>
-    Input Digit (1-10)
-    <!-- numerical input box -->
-    <p><input type="number" step="1" min=0 max=10 name="num_inp"></p>
-    Input Task for App<br>
-      <p>
-        <div class="custom-select">
-          <!-- dropdown input box -->
-          <select name="cat_inp">
-            <!-- default select box text display -->
-            <!-- selected disabled hidden -->
-            <option value="">Select Item</option>
-            <!-- iterate through list passed from app as variable -->
-            {% for item in select_items %}
-              <option value="{{ item }}">{{ item }}</option>
+    <!-- content within columns -->
+    <div class="row">
+      <br>
+      <!-- first column content -->
+      <div class="column">
+        <p>
+          <!-- display application output -->
+          {% if result %}
+          <h2>Results:</h2>
+            <!-- format result -->
+            <div class="{{ result_format }}">{{ result }}</div>
+          {% endif %}
+        </p>
+      </div>
+      <!-- second column content -->
+      <div class="column">
+        <p class="error">
+          <!-- display formatted flash message -->
+          {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+              {{ message }}
             {% endfor %}
-          </select>
-        </div>
-      </p>
-      <p>
-        <!-- submit button -->
-        <input type="submit" value="Submit">
-      </p>
+          {% endwith %}
+        </p>
+        Input Word
+        <!-- text input box -->
+        <p><input type="text" name="txt_inp"></p>
+        Input Digit (1-10)
+        <!-- numerical input box -->
+        <p><input type="number" step="1" min=0 max=10 name="num_inp"></p>
+        Input Task for App<br>
+          <p>
+            <div class="custom-select">
+              <!-- dropdown input box -->
+              <select name="cat_inp">
+                <!-- default select box text display -->
+                <!-- selected disabled hidden -->
+                <option value="">Select Item</option>
+                <!-- iterate through list passed from app as variable -->
+                {% for item in select_items %}
+                  <option value="{{ item }}">{{ item }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </p>
+          <br>
+          <p>
+            <!-- submit button -->
+            <input type="submit" value="Submit">
+          </p>
+      </div>
+    </div>
   </form>
 
   <!-- link to javascript file -->

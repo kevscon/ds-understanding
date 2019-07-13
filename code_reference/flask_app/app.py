@@ -44,6 +44,7 @@ def output():
             flash('Error: input must be entered for all items')
             # reset this webpage with flash message
             return redirect(request.url)
+        # if all input provided, do this
         else:
             # generate output based on selected task action
             if cat_inp == 'add num2word':
@@ -52,13 +53,19 @@ def output():
                 result = txt_inp * int(num_inp)
             else:
                 result = txt_inp + ':/' * int(num_inp)
+            # assign conditional formatting for output
+            if int(num_inp) > 3:
+                result_format = 'output1'
+            else:
+                result_format = 'output2'
+            # render page with output
             return render_template(
-                'result.html',
-                txt_inp=txt_inp,
-                num_inp=num_inp,
-                cat_inp=cat_inp,
-                result=result
+                'home.html',
+                select_items=select_items,
+                result=result,
+                result_format=result_format
             )
+
     # if error returned in try statement above, do this
     except:
         flash('Error: input must be entered for all items')
