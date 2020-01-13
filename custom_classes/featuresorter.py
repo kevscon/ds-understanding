@@ -207,8 +207,8 @@ class FeatureSort:
             ax.set_xticklabels(feat_lab)
 
         # positive label for legend
-        pos_patch = mpatches.Patch(color='green', label='Positive')
+        pos_patch = mpatches.Patch(color='darkgreen', label='Positive')
         # negative label for legend
-        neg_patch = mpatches.Patch(color='red', label='Negative')
+        neg_patch = mpatches.Patch(color='darkred', label='Negative')
         # display legend
         legend = plt.legend(title='Correlation', handles=[pos_patch, neg_patch])
