@@ -1,0 +1,22 @@
+<!-- this is the update page script -->
+<!-- template content in base.html file -->
+{% extends 'base.html' %}
+
+{% block head %}
+<!-- webpage title in browser tab -->
+<title>Task Master</title>
+{% endblock %}
+
+<!-- page content -->
+{% block body %}
+<div class="content">
+  <h1 style="text-align: center">Update Task</h1>
+
+  <form action="/update/{{ task.id }}" method="POST">
+    <!-- add text input box with task description -->
+    <input type="text" name="content" id="content" value="{{ task.content }}">
+    <!-- add submit button with specified text -->
+    <input type="submit" value="Update">
+  </form>
+</div>
+{% endblock %}

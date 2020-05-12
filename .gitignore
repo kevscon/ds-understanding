@@ -4,6 +4,7 @@
 /temp
 /algorithms/data
 /code_reference/data
-/code_reference/flask_app/config.py
+/code_reference/flask_app/input_app/config.py
+/code_reference/flask_app/task_app/config.py
 /code_reference/scraping/config.py
 /analysis/data
