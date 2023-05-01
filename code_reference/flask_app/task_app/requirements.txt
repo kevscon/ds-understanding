@@ -1,5 +1,5 @@
 django
 gunicorn
 django-heroku
-flask==1.1.2
+flask==2.3.2
 flask_sqlalchemy==2.4.1
